@@ -1,8 +1,8 @@
 # QueryArt: Query-Conditioned Articulation Estimation from a Single Image
 
-[Abdelrhman Werby](https://github.com/abwerby), Fabio Scaparro, Kai O. Arras
+[Abdelrhman Werby](https://www.ki.uni-stuttgart.de/institute/team/Werby/), [Fabio Scaparro](https://www.ki.uni-stuttgart.de/institute/team/Scaparro/), [Kai O. Arras](https://www.ki.uni-stuttgart.de/institute/team/Arras/)
 
-Socially Intelligent Robotics Lab, Institute for Artificial Intelligence, University of Stuttgart
+University of Stuttgart, IMPRS-IS
 
 **[Project Page](https://abwerby.github.io/queryart/)** | Paper (coming soon)
 
