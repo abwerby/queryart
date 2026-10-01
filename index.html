@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="QueryArt: Query-Conditioned Articulation Estimation from a Single Image">
+  <meta name="description" content="QueryArt estimates the articulation parameters of an object part from a single RGB image, a 2D query point, and camera intrinsics.">
+  <meta name="keywords" content="articulation estimation, articulated objects, single image, robot manipulation, mobile manipulation, computer vision, robotics">
+  <meta name="author" content="Abdelrhman Werby, Fabio Scaparro, Kai O. Arras">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Socially Intelligent Robotics Lab, University of Stuttgart">
+  <meta property="og:title" content="QueryArt: Query-Conditioned Articulation Estimation from a Single Image">
+  <meta property="og:description" content="QueryArt estimates the articulation parameters of an object part from a single RGB image, a 2D query point, and camera intrinsics.">
+  <meta property="og:url" content="https://abwerby.github.io/queryart/">
+  <meta property="og:image" content="https://abwerby.github.io/queryart/static/images/social_preview.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="631">
+  <meta property="og:image:alt" content="QueryArt: articulation estimated from a single image and a query point">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="QueryArt: Query-Conditioned Articulation Estimation from a Single Image">
+  <meta name="twitter:description" content="QueryArt estimates the articulation parameters of an object part from a single RGB image, a 2D query point, and camera intrinsics.">
+  <meta name="twitter:image" content="https://abwerby.github.io/queryart/static/images/social_preview.jpg">
+  <meta name="twitter:image:alt" content="QueryArt: articulation estimated from a single image and a query point">
+
+  <!-- Academic Metadata -->
+  <meta name="citation_title" content="Query-Conditioned Articulation Estimation from a Single Image">
+  <meta name="citation_author" content="Werby, Abdelrhman">
+  <meta name="citation_author" content="Scaparro, Fabio">
+  <meta name="citation_author" content="Arras, Kai O.">
+  <meta name="citation_publication_date" content="2026">
+
+  <meta name="theme-color" content="#2563eb">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+  <title>QueryArt: Query-Conditioned Articulation Estimation from a Single Image</title>
+
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+
+  <style>
+    .figure-caption { font-size: 1rem; color: #4a4a4a; margin-top: 1rem; text-align: justify; }
+    .paper-figure { width: 100%; height: auto; }
+    .teaser-figure { max-width: 560px; margin: 0 auto; display: block; }
+    .sankey-figure { max-width: 520px; margin: 0 auto; display: block; }
+    .button.is-disabled-link { opacity: 0.6; pointer-events: none; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "Query-Conditioned Articulation Estimation from a Single Image",
+    "description": "QueryArt estimates the articulation parameters of an object part from a single RGB image, a 2D query point, and camera intrinsics.",
+    "author": [
+      {"@type": "Person", "name": "Abdelrhman Werby", "affiliation": {"@type": "Organization", "name": "University of Stuttgart"}},
+      {"@type": "Person", "name": "Fabio Scaparro", "affiliation": {"@type": "Organization", "name": "University of Stuttgart"}},
+      {"@type": "Person", "name": "Kai O. Arras", "affiliation": {"@type": "Organization", "name": "University of Stuttgart"}}
+    ],
+    "datePublished": "2026",
+    "url": "https://abwerby.github.io/queryart/",
+    "image": "https://abwerby.github.io/queryart/static/images/social_preview.jpg",
+    "keywords": ["articulation estimation", "articulated objects", "robot manipulation", "computer vision", "robotics"],
+    "isAccessibleForFree": true
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <main id="main-content">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">QueryArt: Query-Conditioned Articulation Estimation from a Single Image</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Abdelrhman Werby,</span>
+              <span class="author-block">Fabio Scaparro,</span>
+              <span class="author-block">Kai O. Arras</span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Socially Intelligent Robotics Lab, Institute for Artificial Intelligence, University of Stuttgart</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- TODO: Replace ARXIV_ID with the arXiv paper ID and remove is-disabled-link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/ARXIV_ID" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark is-disabled-link">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper (coming soon)</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/ARXIV_ID" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark is-disabled-link">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv (coming soon)</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="https://github.com/abwerby/queryart" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (coming soon)</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Teaser figure -->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img src="static/images/teaser.jpg" class="paper-figure teaser-figure" alt="QueryArt predicts the 3D articulation axis and induced motion of a cabinet door from a single RGB image and a query point, and is deployed on a mobile manipulator">
+        <h2 class="subtitle has-text-centered figure-caption">
+          QueryArt estimates articulation in a normalized coordinate space from a single RGB image and a 2D query point. Depth at the query point enables lifting the prediction to metric 3D space. The magenta arrow illustrates motion consistent with the predicted articulation. Bottom: real-world deployment on a mobile manipulator.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Enabling robots to estimate the kinematic parameters of articulated objects unlocks a wide range of capabilities for interaction and manipulation. The estimation has to happen from the information the robot currently observes, often just a single RGB image of an object it has never seen before.
+              Current single-image approaches couple articulation part segmentation with articulation estimation, making their predictions vulnerable to missed detections and incorrect part associations, and they regress metric 3D geometry that a single view fixes only up to scale.
+              We present QueryArt, a model that estimates articulation parameters from a single RGB image, a 2D query point, and camera intrinsics. QueryArt is trained to estimate the 3D articulation geometry relative to the queried point and in units of its depth, which keeps its target identifiable from the image alone. A single depth measurement at the query point then supplies the scale and recovers the metric parameters. We train QueryArt on a curated mixture of synthetic and real-world articulation datasets. We evaluate QueryArt on several benchmarks and compare it against recent baselines. QueryArt outperforms recent baselines on most articulation metrics, including on out-of-distribution data. To demonstrate the model's capabilities in real-world settings, we evaluate QueryArt on a mobile manipulator across 57 manipulation trials spanning 16 object parts and five viewpoint classes, achieving a 70.2% success rate.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Method -->
+  <section class="section">
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3 has-text-centered">Method</h2>
+      <img src="static/images/method.png" class="paper-figure" alt="QueryArt architecture: DINOv3 image encoder, query encoder, transformer decoder with Type and Line tokens, and prediction heads for joint type and axis parameters" loading="lazy">
+      <div class="container is-max-desktop">
+        <p class="figure-caption">
+          A frozen vision transformer (DINOv3 ViT-B/16) encodes the RGB image; early and final-block features are fused into a three-scale feature pyramid. The query embedding is built from the point-wise visual features sampled at the query, a Fourier encoding of the pixel location, and a calibration vector derived from the camera intrinsics. It is added to two learned tokens, <span style="font-variant: small-caps;">Type</span> and <span style="font-variant: small-caps;">Line</span>, which pass through two transformer blocks that cross-attend to the image features and self-attend to each other. The prediction heads output the joint type and the axis parameters for both joint types. Right: the predicted geometry in query-normalized coordinates. Expressing the offset to the revolute axis in units of the query depth makes the axis recoverable up to a single global scale factor.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Qualitative results -->
+  <section class="section hero is-light">
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3 has-text-centered">Qualitative Results</h2>
+      <img src="static/images/Qualitative.jpg" class="paper-figure" alt="Qualitative articulation predictions on Arti4D, self-captured scenes, and HOI! with query points, projected trajectories, and predicted 3D axes on point clouds" loading="lazy">
+      <div class="container is-max-desktop">
+        <p class="figure-caption">
+          Qualitative articulation predictions on objects unseen during training: Arti4D (left), self-captured scenes (middle), HOI! (right). Each scene is queried at several points. Top: input image with the query points and the projected motion trajectory. Bottom: the same predictions on the point cloud, with the predicted axis of motion and the 3D trajectory.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Real-robot experiments -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Real-Robot Experiments</h2>
+      <div class="content has-text-justified">
+        <p>
+          We deploy QueryArt on a mobile manipulator across 57 manipulation trials spanning 16 object parts and five viewpoint classes, achieving a 70.2% success rate.
+        </p>
+      </div>
+      <img src="static/images/robot_viewpoint_sankey.png" class="paper-figure sankey-figure" alt="Sankey diagram of real-robot trials by viewpoint class flowing to success or failure" loading="lazy">
+      <p class="figure-caption has-text-centered">
+        Real-robot trials by viewpoint. Each trial is assigned to one of five viewpoint classes and flows to a success or a failure outcome.
+      </p>
+    </div>
+  </section>
+
+  <!-- BibTeX citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="bibtex-header">
+        <h2 class="title">BibTeX</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+          <i class="fas fa-copy"></i>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
+      <!-- TODO: Update with the arXiv ID once available -->
+      <pre id="bibtex-code"><code>@article{werby2026queryart,
+  title={Query-Conditioned Articulation Estimation from a Single Image},
+  author={Werby, Abdelrhman and Scaparro, Fabio and Arras, Kai O.},
+  journal={arXiv preprint},
+  year={2026}
+}</code></pre>
+    </div>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
