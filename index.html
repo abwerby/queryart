@@ -82,6 +82,12 @@
     .affiliation-logos { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 1.5rem 2.5rem; margin: 1.25rem 0 0.5rem; }
     .affiliation-logos img { display: block; width: auto; }
     .title-hero .hero-body { padding-bottom: 0.5rem; }
+    .explainer-video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #000; border-radius: 8px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12); }
+    .robot-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; margin-bottom: 1.5rem; }
+    .robot-clip { margin: 0; }
+    .robot-clip video { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: #000; border-radius: 8px; }
+    .robot-clip figcaption { text-align: center; font-weight: 600; color: #4a4a4a; margin-top: 0.5rem; }
+    @media (max-width: 600px) { .robot-grid { grid-template-columns: minmax(0, 1fr); } }
     .teaser .hero-body { padding-top: 0.5rem; }
     .logo-unistuttgart { height: 48px; }
     .logo-imprs { height: 30px; }
@@ -208,8 +214,19 @@
     </div>
   </section>
 
+  <!-- Explanation video -->
+  <section class="section" id="video">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Video</h2>
+      <video class="explainer-video" controls playsinline preload="metadata" poster="static/videos/queryart_video_poster.jpg">
+        <source src="static/videos/queryart_video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </section>
+
   <!-- Method -->
-  <section class="section">
+  <section class="section hero is-light">
     <div class="container is-max-widescreen">
       <h2 class="title is-3 has-text-centered">Method</h2>
       <img src="static/images/method.png" class="paper-figure" alt="QueryArt architecture: DINOv3 image encoder, query encoder, transformer decoder with Type and Line tokens, and prediction heads for joint type and axis parameters" loading="lazy">
@@ -222,7 +239,7 @@
   </section>
 
   <!-- Qualitative results -->
-  <section class="section hero is-light">
+  <section class="section">
     <div class="container is-max-widescreen">
       <h2 class="title is-3 has-text-centered">Qualitative Results</h2>
       <img src="static/images/Qualitative.jpg" class="paper-figure" alt="Qualitative articulation predictions on Arti4D, self-captured scenes, and HOI! with query points, projected trajectories, and predicted 3D axes on point clouds" loading="lazy">
@@ -235,9 +252,35 @@
   </section>
 
   <!-- Real-robot experiments -->
-  <section class="section">
+  <section class="section hero is-light" id="robot">
     <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">Real-Robot Experiments</h2>
+      <div class="robot-grid">
+        <figure class="robot-clip">
+          <video autoplay muted loop playsinline preload="auto" poster="static/videos/robot_cabinet_door_poster.jpg">
+            <source src="static/videos/robot_cabinet_door.mp4" type="video/mp4">
+          </video>
+          <figcaption>Cabinet door</figcaption>
+        </figure>
+        <figure class="robot-clip">
+          <video autoplay muted loop playsinline preload="auto" poster="static/videos/robot_room_door_poster.jpg">
+            <source src="static/videos/robot_room_door.mp4" type="video/mp4">
+          </video>
+          <figcaption>Room door</figcaption>
+        </figure>
+        <figure class="robot-clip">
+          <video autoplay muted loop playsinline preload="auto" poster="static/videos/robot_lower_drawer_poster.jpg">
+            <source src="static/videos/robot_lower_drawer.mp4" type="video/mp4">
+          </video>
+          <figcaption>Lower drawer</figcaption>
+        </figure>
+        <figure class="robot-clip">
+          <video autoplay muted loop playsinline preload="auto" poster="static/videos/robot_small_drawer_poster.jpg">
+            <source src="static/videos/robot_small_drawer.mp4" type="video/mp4">
+          </video>
+          <figcaption>Small drawer</figcaption>
+        </figure>
+      </div>
       <div class="content has-text-justified">
         <p>
           We deploy QueryArt on a mobile manipulator across 57 manipulation trials spanning 16 object parts and five viewpoint classes, achieving a 70.2% success rate.
